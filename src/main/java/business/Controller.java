@@ -41,7 +41,27 @@ public class Controller {
         this.mines = in.readNumberOfMines(row, width);
     }
 
-    public int[] readPos(State state){
+    public void play(State state, Minefield field){
+        while(state.getWin() == -1) {
+            show(state);
+
+            int[] coordinates = readPos(state);
+            int x = coordinates[0];
+            int y = coordinates[1];
+
+            state = field.play(state, x, y);
+        }
+
+        if(state.getWin() == WIN){
+            System.out.println("Parabéns, você foi o vencedor!");
+        } else if(state.getWin() == LOSE){
+            System.out.println("Infelizmente você perdeu :/");
+        }
+
+        showAll(state);
+    }
+
+    private int[] readPos(State state){
         System.out.print("Escolha a posição (i, j) que deseja jogar: \n");
         int numberOfInvalidPos = 0, x, y;
         boolean invalidPos = true;
@@ -71,27 +91,7 @@ public class Controller {
         return new int[]{x, y};
     }
 
-    public void play(State state, Minefield field){
-        while(state.getWin() == -1) {
-            show(state);
-
-            int[] coordinates = readPos(state);
-            int x = coordinates[0];
-            int y = coordinates[1];
-
-            state = field.play(state, x, y);
-        }
-
-        if(state.getWin() == WIN){
-            System.out.println("Parabéns, você foi o vencedor!");
-        } else if(state.getWin() == LOSE){
-            System.out.println("Infelizmente você perdeu :/");
-        }
-
-        showAll(state);
-    }
-
-    public void show(State state){
+    private void show(State state){
         System.out.print("   ");
 
         for(int i = 0; i < state.getWidth(); i++){
@@ -113,7 +113,7 @@ public class Controller {
         }
     }
 
-    public void showAll(State state){
+    private void showAll(State state){
         System.out.print("  ");
 
         for(int i = 0; i < state.getWidth(); i++){
