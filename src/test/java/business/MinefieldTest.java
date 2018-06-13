@@ -15,17 +15,47 @@ public class MinefieldTest {
     public void testPlay() {
         State estadoInicial = State.builder()
                 .mines(5)
-                .row(4)
-                .width(3)
+                .row(5)
+                .width(5)
                 .fields(Arrays.asList(
-                        Arrays.asList(1, 2),
-                        Arrays.asList(3, 4)
+                        Arrays.asList(-1, 1, 0, 1, -1),
+                        Arrays.asList(1, 2, 1, 1, 1),
+                        Arrays.asList(0, 1, -1, 2, 1),
+                        Arrays.asList(1, 2, 2, 2, -1),
+                        Arrays.asList(1, -1, 1, 1, 1)
                 ))
-                .visited(Arrays.asList((Arrays.asList(true, false))))
+                .visited(Arrays.asList(
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, false, false, false)
+                ))
                 .build();
-        State actual = new Minefield().play(estadoInicial, 3, 3);
 
-      //  Assert.assertEquals(esperado, resultado);
+        State resultado = new Minefield().play(estadoInicial, 1, 2);
+
+        State esperado = State.builder()
+                .mines(5)
+                .row(5)
+                .width(5)
+                .fields(Arrays.asList(
+                        Arrays.asList(-1, 1, 0, 1, -1),
+                        Arrays.asList(1, 2, 1, 1, 1),
+                        Arrays.asList(0, 1, -1, 2, 1),
+                        Arrays.asList(1, 2, 2, 2, -1),
+                        Arrays.asList(1, -1, 1, 1, 1)
+                ))
+                .visited(Arrays.asList(
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, true, false, false),
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, false, false, false),
+                        Arrays.asList(false, false, false, false, false)
+                ))
+                .build();
+
+        Assert.assertEquals(esperado, resultado);
     }
 
 }
