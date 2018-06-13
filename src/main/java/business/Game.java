@@ -1,6 +1,5 @@
 package business;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import utils.Input;
 import domain.State;
 

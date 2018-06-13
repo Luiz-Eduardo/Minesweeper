@@ -8,23 +8,9 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by logique on 12/06/18.
+ * @author Luiz Eduardo on 12/06/2018.
  */
 public class Init extends Field {
-  /*  private int mines;
-    private Random generator;
-    private ArrayList < ArrayList <Boolean> > visited;
-
-    Init(int row, int width, int mines){
-        this.row = row;
-        this.width = width;
-        this.mines = mines;
-
-        field = new ArrayList < ArrayList <Integer> >();
-        visited = new ArrayList < ArrayList <Boolean> >();
-        generator = new Random();
-    }*/
-
     Init(){
 
     }

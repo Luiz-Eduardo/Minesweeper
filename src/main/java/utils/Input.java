@@ -6,7 +6,7 @@ import static utils.Validator.isValid;
 import static utils.Validator.isValidMines;
 
 /**
- * @autor Luiz Eduardo on 11/06/2018.
+ * @author Luiz Eduardo on 11/06/2018.
  * Classe utilizada para garantir que os dados digitados na entrada são válidos.
  */
 

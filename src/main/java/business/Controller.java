@@ -4,12 +4,10 @@ import domain.State;
 import utils.ConversionData;
 import utils.Input;
 
-import java.util.ArrayList;
-
 import static utils.Validator.isValidPos;
 
 /**
- * Created by logique on 12/06/18.
+ * @author Luiz Eduardo on 12/06/2018.
  */
 public class Controller {
     private Input in;

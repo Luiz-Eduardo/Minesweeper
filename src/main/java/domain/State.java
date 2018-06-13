@@ -1,7 +1,5 @@
 package domain;
 
-import business.Minefield;
-
 import java.util.ArrayList;
 import java.util.List;
 
