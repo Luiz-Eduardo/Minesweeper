@@ -10,7 +10,7 @@ import java.util.Random;
 /**
  * @author Luiz Eduardo on 12/06/2018.
  */
-public class Init extends Field {
+public class Init {
     Init(){
 
     }

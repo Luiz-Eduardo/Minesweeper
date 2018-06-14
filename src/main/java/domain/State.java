@@ -15,6 +15,10 @@ public class State {
     private int width;
     private int mines;
 
+    public int getMines() {
+        return mines;
+    }
+
     public int getWin(){
         return win;
     }
