@@ -15,7 +15,11 @@ public class Init extends Field {
 
     }
 
-    public static State init(int row, int width, int mines, List < List <Integer> > field, List < List < Boolean > > visited, Random generator){
+    public static State init(int row, int width, int mines){
+        ArrayList <List < Integer > > field = new ArrayList < List <Integer> >();
+        ArrayList <List < Boolean > > visited = new ArrayList < List <Boolean> >();
+        Random generator = new Random();
+
         createMatrix(row, width, field, visited);
         setMatrixToZero(row, width, field, visited);
         populateMines(row, width, mines, generator, field);

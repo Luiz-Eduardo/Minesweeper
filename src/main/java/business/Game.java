@@ -37,7 +37,7 @@ public class Game {
 
                 controller.read();
 
-                State state = new Init().init(controller.getRow(), controller.getWidth(), controller.getMines(), new ArrayList<List<Integer>>(), new ArrayList< List <Boolean> >(), new Random());
+                State state = Init.init(controller.getRow(), controller.getWidth(), controller.getMines());
                 controller.play(state, graph);
                 break;
             case 2:
